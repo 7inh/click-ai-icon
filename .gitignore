@@ -1,0 +1,8 @@
+# create a gitignore file for the project
+# this file will be used to ignore files that we don't want to commit to the repository
+# for example, we don't want to commit the node_modules folder to the repository
+
+
+node_modules/*
+dist/*
+test/*
