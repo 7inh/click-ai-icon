@@ -133,7 +133,8 @@ import Heart from './icons/Heart';
 import Quality3 from './icons/Quality3';
 import Quality2 from './icons/Quality2';
 
-const icons: Record<string,React.FC<React.SVGProps<SVGSVGElement>>>  = {
+
+const icons = {
   bookmark1: Bookmark1,
   verticalSliderSquare: VerticalSliderSquare,
   search1: Search1,
@@ -267,9 +268,7 @@ const icons: Record<string,React.FC<React.SVGProps<SVGSVGElement>>>  = {
   heart: Heart,
   quality3: Quality3,
   quality2: Quality2,
-  
-
-};
+} as const;
 
 interface IconProps extends React.SVGProps<SVGSVGElement> {
   name: keyof typeof icons;
@@ -277,8 +276,11 @@ interface IconProps extends React.SVGProps<SVGSVGElement> {
   color?: string;
 }
 
-const CAIcon: React.FC<IconProps> = ({ name, size, color, ...props }) => {
+const CAIcon: React.FC<IconProps> = ({ name, size, color='currentColor', ...props }) => {
   const SvgIcon = icons[name];
+  if (!SvgIcon) {
+    return null;
+  }
   return <SvgIcon name={name} width={size} height={size} fill={color} {...props} />;
 };
 
