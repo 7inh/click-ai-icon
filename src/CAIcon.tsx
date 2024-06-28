@@ -1,7 +1,7 @@
 import React from 'react';
 import Star from './icons/Star';
 
-const icons: Record<string,React.FC<IconProps>>  = {
+const icons: Record<string,React.FC<React.SVGProps<SVGSVGElement>>>  = {
   star: Star,
 };
 
