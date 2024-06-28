@@ -1,5 +1,5 @@
 import React from 'react';
-import { ReactComponent as IconSvg } from './star.svg';
+import IconSvg from './star.svg';
 
 
 const Star: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
