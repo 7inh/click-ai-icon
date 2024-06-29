@@ -276,7 +276,7 @@ interface IconProps extends React.SVGProps<SVGSVGElement> {
   color?: string;
 }
 
-const CAIcon: React.FC<IconProps> = ({ name, size, color='currentColor', ...props }) => {
+const CAIcon: React.FC<IconProps> = ({ name, size=16, color='currentColor', ...props }) => {
   const SvgIcon = icons[name];
   if (!SvgIcon) {
     return null;
